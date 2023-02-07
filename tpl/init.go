@@ -28,10 +28,11 @@ var kitexTpl embed.FS
 //go:embed hertz
 var hertzTpl embed.FS
 
-const (
-	KitexDir       = "/tmp/kitex/"
-	HertzDir       = "/tmp/hertz/"
-	KitexExtension = "extensions.yaml"
+const KitexExtension = "extensions.yaml"
+
+var (
+	KitexDir = path.Join(os.TempDir(), "kitex")
+	HertzDir = path.Join(os.TempDir(), "hertz")
 )
 
 func Init() {
